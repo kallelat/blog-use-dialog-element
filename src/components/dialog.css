@@ -1,0 +1,56 @@
+dialog {
+  /* to make it bit bigger */
+  max-height: initial;
+  min-height: 10rem;
+  max-width: 30rem;
+  width: 90%;
+
+  /* styling */
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 0;
+
+  /* layout */
+  flex-direction: column;
+}
+
+/* we make sure dialog has display: flex but only when it is open */
+dialog[open] {
+  display: flex;
+}
+
+/* automatic backdrop for the modal, a bit of styling here */
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(2px);
+}
+
+/* header title, nothing special */
+dialog > header {
+  display: flex;
+  flex: 0;
+  background-color: lightgray;
+  padding: 0.75rem;
+  border-bottom: 1px solid black;
+}
+
+/* a wrapper for dialog contents */
+dialog > section {
+  flex: 1;
+  padding: 0.75rem;
+  min-height: 7rem;
+  text-align: left;
+}
+
+/* button container */
+dialog > menu {
+  border-top: 1px solid black;
+  display: flex;
+  padding: 0.75rem;
+  margin: 0;
+  justify-content: right;
+}
+
+dialog > menu > button {
+  padding: 0.5rem 1.75rem;
+}

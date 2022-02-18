@@ -22,15 +22,12 @@ const Dialog: FunctionComponent<DialogProps> = ({
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
-    if (open) {
-      if (dialogRef.current) {
+    if (dialogRef.current) {
+      if (open) {
         // when the "open" prop is toggled to true we invoke showModal() method.
-        console.info("open");
         (dialogRef.current as any).showModal();
-      }
-    } else {
-      // force closure
-      if (dialogRef.current) {
+      } else {
+        // force closure
         // trigger cancel evesnt, which will automatically close the modal
         (dialogRef.current as any).close();
       }
